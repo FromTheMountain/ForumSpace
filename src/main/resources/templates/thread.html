@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+    <title>ForumSpace</title>
+</head>
+<body>
+    <div class="content">
+        <a th:href="@{/}"><h1>ForumSpace</h1></a>
+        <h2><span th:text="${thread.name}"></span></h2>
+        <div th:each="post : ${thread.posts}" class="post">
+            <p>At <span th:text="${post.postedAtString()}"></span>, <span th:text="${post.poster}"></span> wrote:</p>
+            <p th:text="${post.content}"></p>
+        </div>
+
+        <h2>Add your own post!</h2>
+        <form method="POST" th:object="${newPost}">
+            <!-- <input type="hidden" name="_csrf" th:value="${_csrf.token}"/> -->
+   
+            <label for="poster">Your name: </label>
+            <input type="text" name="poster" th:field="*{poster}" /><br />
+
+            <textarea th:field="*{content}" cols="30" rows="10"></textarea>
+   
+           <button>Add post</button>
+        </form>
+    </div>
+</body>
+<script th:src="@{/scripts/home.js}"></script>
+</html>

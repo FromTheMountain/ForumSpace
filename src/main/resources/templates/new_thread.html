@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+    <title>ForumSpace</title>
+</head>
+<body>
+    <h1>You're making a new thread!</h1>
+      <form method="POST" th:action="@{'/forum/' + ${forumName} + '/new'}" id="newThreadForm">
+         <!-- <input type="hidden" name="_csrf" th:value="${_csrf.token}"/> -->
+
+         <label for="name">Thread name: </label>
+         <input name="name" type="text" /><br />
+
+         <label for="poster">Your name: </label>
+         <input name="poster" type="text" /><br />
+
+         <textarea name="content" cols="30" rows="10"></textarea>
+
+        <button>Post new thread</button>
+      </form>
+   </body>
+</html>

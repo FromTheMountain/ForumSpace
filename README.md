@@ -1,0 +1,3 @@
+# ForumSpace
+
+A little project I made to test my understanding of Spring Boot, after working through the first chapter of Craig Walls' _Spring in Action_. The only requirement is that there is a PostgreSQL server running on port 5432 with a database called `forumspace`. After that, Hibernate takes care of writing to and querying the database. To start the application, run `./mvnw spring-boot:run` and point your browser to `localhost:8080`.

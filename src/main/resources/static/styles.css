@@ -1,0 +1,40 @@
+body {
+    font-family: sans-serif;
+}
+
+div.content {
+    border: 2px black solid;
+    padding: 10px;
+    margin: 40px;
+}
+
+div.forum-list {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+div.forum {
+    height: 100px;
+    margin: 0px;
+    padding: 10px;
+}
+
+div.even-index-forum {
+    background-color: lightgray;
+}
+
+div.odd-index-forum {
+    background-color: beige;
+}
+
+textarea {
+    width: 100%;
+    resize: vertical;
+}
+
+div.post {
+    border: 2px black solid;
+    padding: 20px 50px;
+}

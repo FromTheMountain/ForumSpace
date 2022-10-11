@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+    <title>ForumSpace</title>
+</head>
+<body>
+    <div class="content">
+        <a th:href="@{/}"><h1>ForumSpace</h1></a>
+        <div th:each="forumGroup : ${forumGroups}">
+            <h2><span th:text=${forumGroup.name}></span> forums</h2>
+            <div class="forum-list">
+                <div th:each="forum : ${forumGroup.forums}" class="forum">
+                    <a th:href="@{'/forum/' + ${#strings.toLowerCase(forum.name)}}">
+                        <h3><span th:text="${forum.name}"></span> forum</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script th:src="@{/scripts/home.js}"></script>
+</html>

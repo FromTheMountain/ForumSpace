@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+    <title>ForumSpace</title>
+</head>
+<body>
+    <div class="content">
+        <a th:href="@{/}"><h1>ForumSpace</h1></a>
+        <h2><span th:text="${forum.name}"></span> forum</h2>
+        <a th:href="@{'/forum/' + ${forum.name} + '/new'}">
+            <button>New thread</button>
+        </a>
+        <div class="thread-list">
+            <div th:each="thread : ${forum.threads}" class="thread">
+                <a th:href="@{'/forum/' + ${forum.name} + '/' + ${thread.id}}">
+                    <h3 th:text="${thread.name}"></h3>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
